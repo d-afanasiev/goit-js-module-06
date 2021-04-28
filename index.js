@@ -65,11 +65,14 @@ const users = [
 ];
 
 // Пиши код ниже этой строки
-const calculateTotalBalance = (users) => {
-  const totalBalance = users.reduce((total, { balance }) => total + balance, 0);
+const getTotalFriendCount = (users) => {
+  const totalBalance = users.reduce(
+    (total, { friends }) => total + friends.length,
+    0
+  );
   console.log(totalBalance);
   return totalBalance;
 };
 // Пиши код выше этой строки
 
-calculateTotalBalance(users);
+getTotalFriendCount(users);
