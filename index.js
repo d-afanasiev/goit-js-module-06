@@ -71,8 +71,9 @@ const users = [
 
 const getNamesSortedByFriendCount = (users) => {
   const user = [...users]
-    .sort((firsEl, lastEl) => firsEl.friends.length - lastEl.friends.length)
-    .map((user) => user.name);
+    .flatMap((user) => user.friends)
+    .filter((element, index, array) => array.indexOf(element) === index)
+    .sort((firsEl, lastEl) => firsEl.localeCompare(lastEl));
   return user;
 };
 
