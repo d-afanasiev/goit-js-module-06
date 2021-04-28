@@ -72,14 +72,11 @@ const users = [
 ];
 
 // Пиши код ниже этой строки
-const getFriends = (users) => {
-  const user = users.flatMap((friend) => friend.friends);
-  const uniqueUser = user.filter(
-    (user, index, array) => array.indexOf(user) === index
-  );
-  console.log(uniqueUser);
-  return uniqueUser;
+const getActiveUsers = (users) => {
+  const user = users.filter((user) => user.isActive);
+  console.log(user);
+  return user;
 };
 
-getFriends(users);
+getActiveUsers(users);
 // Пиши код выше этой строки
