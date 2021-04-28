@@ -69,12 +69,11 @@ const users = [
   },
 ];
 
-const getNamesSortedByFriendCount = (users) => {
+const getTotalBalanceByGender = (users, gender) => {
   const user = [...users]
-    .flatMap((user) => user.friends)
-    .filter((element, index, array) => array.indexOf(element) === index)
-    .sort((firsEl, lastEl) => firsEl.localeCompare(lastEl));
+    .filter((user) => user.gender === gender)
+    .reduce((total, { balance }) => total + balance, 0);
   return user;
 };
 
-console.log(getNamesSortedByFriendCount(users));
+console.log(getTotalBalanceByGender(users, "male"));
