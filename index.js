@@ -1,43 +1,78 @@
-// const students = [
-//   { name: "Манго", score: 83 },
-//   { name: "Поли", score: 59 },
-//   { name: "Аякс", score: 37 },
-//   { name: "Киви", score: 94 },
-// ];
-
-// const inAscendingScoreOrder = students.sort(
-//   (firstStudent, secondStudent) => firstStudent.score - secondStudent.score
-// );
-
-// const inDescendingScoreOrder = students.sort(
-//   (firstStudent, secondStudent) => secondStudent.score - firstStudent.score
-// );
-
-// const inAlphabeticalOrder = students.sort((firstStudent, secondStudent) =>
-//   firstStudent.name.localeCompare(secondStudent.name)
-// );
-
-const books = [
-  { title: "Последнее королевство", author: "Бернард Корнуэлл", rating: 8.38 },
-  { title: "На берегу спокойных вод", author: "Роберт Шекли", rating: 8.51 },
-  { title: "Сон смешного человека", author: "Федор Достоевский", rating: 7.75 },
-  { title: "Красна как кровь", author: "Ли Танит", rating: 7.94 },
-  { title: "Враг Божий", author: "Бернард Корнуэлл", rating: 8.67 },
+const users = [
+  {
+    name: "Moore Hensley",
+    email: "moorehensley@indexia.com",
+    eyeColor: "blue",
+    friends: ["Sharron Pace"],
+    isActive: false,
+    balance: 2811,
+    gender: "male",
+    age: 37,
+  },
+  {
+    name: "Sharlene Bush",
+    email: "sharlenebush@tubesys.com",
+    eyeColor: "blue",
+    friends: ["Briana Decker", "Sharron Pace"],
+    isActive: true,
+    balance: 3821,
+    gender: "female",
+    age: 34,
+  },
+  {
+    name: "Ross Vazquez",
+    email: "rossvazquez@xinware.com",
+    eyeColor: "green",
+    friends: ["Marilyn Mcintosh", "Padilla Garrison", "Naomi Buckner"],
+    isActive: false,
+    balance: 3793,
+    gender: "male",
+    age: 24,
+  },
+  {
+    name: "Elma Head",
+    email: "elmahead@omatom.com",
+    eyeColor: "green",
+    friends: ["Goldie Gentry", "Aisha Tran"],
+    isActive: true,
+    balance: 2278,
+    gender: "female",
+    age: 21,
+  },
+  {
+    name: "Carey Barr",
+    email: "careybarr@nurali.com",
+    eyeColor: "blue",
+    friends: ["Jordan Sampson", "Eddie Strong"],
+    isActive: true,
+    balance: 3951,
+    gender: "male",
+    age: 27,
+  },
+  {
+    name: "Blackburn Dotson",
+    email: "blackburndotson@furnigeer.com",
+    eyeColor: "brown",
+    friends: ["Jacklyn Lucas", "Linda Chapman"],
+    isActive: false,
+    balance: 1498,
+    gender: "male",
+    age: 38,
+  },
+  {
+    name: "Sheree Anthony",
+    email: "shereeanthony@kog.com",
+    eyeColor: "brown",
+    friends: ["Goldie Gentry", "Briana Decker"],
+    isActive: true,
+    balance: 2764,
+    gender: "female",
+    age: 39,
+  },
 ];
-// Пиши код ниже этой строки
 
-const sortedByAuthorName = [...books].sort((firstEl, lastEl) =>
-  firstEl.author.localeCompare(lastEl.author)
-);
+const sortByAscendingBalance = (users) => {
+  return [...users].sort((firsEl, lastEl) => firsEl.balance - lastEl.balance);
+};
 
-const sortedByReversedAuthorName = [...books].sort((firstEl, lastEl) =>
-  lastEl.author.localeCompare(firstEl.author)
-);
-
-const sortedByAscendingRating = [...books].sort(
-  (firstEl, lastEl) => firstEl.rating - lastEl.rating
-);
-
-const sortedByDescentingRating = [...books].sort(
-  (firstEl, lastEl) => lastEl.rating - firstEl.rating
-);
+console.log(sortByAscendingBalance(users));
