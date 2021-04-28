@@ -1,16 +1,16 @@
 // Пиши код ниже этой строки
-const filterArray = (numbers, value) => {
-  const filteredNumbers = [];
+const getCommonElements = (firstArray, secondArray) => {
+  const commonElements = [];
 
-  numbers.forEach((number) => {
-    if (number > value) {
-      filteredNumbers.push(number);
+  firstArray.forEach((element) => {
+    if (secondArray.includes(element)) {
+      commonElements.push(element);
     }
   });
 
-  console.log(filteredNumbers);
+  console.log(commonElements);
   // Пиши код выше этой строки
-  return filteredNumbers;
+  return commonElements;
 };
 
-filterArray([12, 24, 8, 41, 76], 20);
+getCommonElements([24, 12, 27, 3], [12, 8, 3, 36, 27]);
