@@ -1,34 +1,16 @@
-// const numbers = [5, 10, 15, 20, 25];
-
-// // Объявление функции
-// numbers.forEach(function (number, index) {
-//   console.log(`Индекс ${index}, значение ${number}`);
-// });
-
-// // Анонимная стрелочная функция
-// numbers.forEach((number, index) => {
-//   console.log(`Индекс ${index}, значение ${number}`);
-// });
-
-// const numbers = [5, 10, 15, 20, 25];
-
-// const logMessage = (number, index) => {
-//   console.log(`Индекс ${index}, значение ${number}`);
-// };
-
-// numbers.forEach(logMessage);
-
 // Пиши код ниже этой строки
-const calculateTotalPrice = (orderedItems) => {
-  let totalPrice = 0;
+const filterArray = (numbers, value) => {
+  const filteredNumbers = [];
 
-  orderedItems.forEach((item) => {
-    totalPrice += item;
+  numbers.forEach((number) => {
+    if (number > value) {
+      filteredNumbers.push(number);
+    }
   });
 
-  console.log(totalPrice);
-  return totalPrice;
+  console.log(filteredNumbers);
+  // Пиши код выше этой строки
+  return filteredNumbers;
 };
-// Пиши код выше этой строки
 
-calculateTotalPrice([164, 48, 291]);
+filterArray([12, 24, 8, 41, 76], 20);
