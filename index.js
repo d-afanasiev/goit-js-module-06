@@ -1,43 +1,29 @@
-// массив.reduce((previousValue, element, index, array) => {
-//   // Тело коллбек-функции
-// }, initialValue);
+// const students = [
+//   { name: "Манго", score: 83 },
+//   { name: "Поли", score: 59 },
+//   { name: "Аякс", score: 37 },
+//   { name: "Киви", score: 94 },
+//   { name: "Хьюстон", score: 64 },
+// ];
 
-// const total = [2, 7, 3, 14, 6].reduce((previousValue, number) => {
-//   return previousValue + number;
+// // Название аккумулятора может быть произвольным, это просто параметр функции
+// const totalScore = students.reduce((total, student) => {
+//   return total + student.score;
 // }, 0);
 
-// console.log(total); // 32
+// const averageScore = totalScore / students.length;
 
-// # Вначале метод reduce() создаёт внутреннюю переменную-аккумулятор и
-// # присваивает ей значение параметра initialValue или первого элемента
-// # перебираемого массива, если initialValue не задан.
-// previousValue = 0
-
-// # Далее коллбек-функция вызывается для каждого элемента массива. Текущее значение
-// # параметра previousValue это то, что вернула коллбек-функция на прошлой итерации.
-// Итерация 1 -> previousValue = 0 -> number = 2 -> return 0 + 2 -> return 2
-// Итерация 2 -> previousValue = 2 -> number = 7 -> return 2 + 7 -> return 9
-// Итерация 3 -> previousValue = 9 -> number = 3 -> return 9 + 3 -> return 12
-// Итерация 4 -> previousValue = 12 -> number = 14 -> return 12 + 14 -> return 26
-// Итерация 5 -> previousValue = 26 -> number = 6 -> return 26 + 6 -> return 32
-
-// # После того как весь массив перебран, метод reduce() возвращает значение аккумулятора.
-// Результат - 32
-
-const players = {
-  mango: 1270,
-  poly: 468,
-  ajax: 710,
-  kiwi: 244,
-};
-const playtimes = Object.values(players); // [1270, 468, 710, 244]
+const players = [
+  { name: "Манго", playtime: 1270, gamesPlayed: 4 },
+  { name: "Поли", playtime: 469, gamesPlayed: 2 },
+  { name: "Аякс", playtime: 690, gamesPlayed: 3 },
+  { name: "Киви", playtime: 241, gamesPlayed: 1 },
+];
 // Пиши код ниже этой строки
 
-const totalPlayTime = playtimes.reduce(
-  (previousValue, number) => previousValue + number
+const totalAveragePlaytimePerGame = players.reduce(
+  (total, player) => total + player.playtime / player.gamesPlayed,
+  0
 );
 
-// Пиши код выше этой строки
-const averagePlayTime = totalPlayTime / playtimes.length;
-
-console.log(averagePlayTime);
+console.log(totalAveragePlaytimePerGame);
