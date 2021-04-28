@@ -1,74 +1,43 @@
-const users = [
-  {
-    name: "Moore Hensley",
-    email: "moorehensley@indexia.com",
-    eyeColor: "blue",
-    friends: ["Sharron Pace"],
-    isActive: false,
-    balance: 2811,
-    gender: "male",
-  },
-  {
-    name: "Sharlene Bush",
-    email: "sharlenebush@tubesys.com",
-    eyeColor: "blue",
-    friends: ["Briana Decker", "Sharron Pace"],
-    isActive: true,
-    balance: 3821,
-    gender: "female",
-  },
-  {
-    name: "Ross Vazquez",
-    email: "rossvazquez@xinware.com",
-    eyeColor: "green",
-    friends: ["Marilyn Mcintosh", "Padilla Garrison", "Naomi Buckner"],
-    isActive: false,
-    balance: 3793,
-    gender: "male",
-  },
-  {
-    name: "Elma Head",
-    email: "elmahead@omatom.com",
-    eyeColor: "green",
-    friends: ["Goldie Gentry", "Aisha Tran"],
-    isActive: true,
-    balance: 2278,
-    gender: "female",
-  },
-  {
-    name: "Carey Barr",
-    email: "careybarr@nurali.com",
-    eyeColor: "blue",
-    friends: ["Jordan Sampson", "Eddie Strong"],
-    isActive: true,
-    balance: 3951,
-    gender: "male",
-  },
-  {
-    name: "Blackburn Dotson",
-    email: "blackburndotson@furnigeer.com",
-    eyeColor: "brown",
-    friends: ["Jacklyn Lucas", "Linda Chapman"],
-    isActive: false,
-    balance: 1498,
-    gender: "male",
-  },
-  {
-    name: "Sheree Anthony",
-    email: "shereeanthony@kog.com",
-    eyeColor: "brown",
-    friends: ["Goldie Gentry", "Briana Decker"],
-    isActive: true,
-    balance: 2764,
-    gender: "female",
-  },
-];
+// массив.reduce((previousValue, element, index, array) => {
+//   // Тело коллбек-функции
+// }, initialValue);
 
-// Пиши код ниже этой строки
-const isAnyUserActive = (users) => {
-  const someActiveUsers = users.some(({ isActive }) => isActive);
-  console.log(someActiveUsers);
-  return someActiveUsers;
+// const total = [2, 7, 3, 14, 6].reduce((previousValue, number) => {
+//   return previousValue + number;
+// }, 0);
+
+// console.log(total); // 32
+
+// # Вначале метод reduce() создаёт внутреннюю переменную-аккумулятор и
+// # присваивает ей значение параметра initialValue или первого элемента
+// # перебираемого массива, если initialValue не задан.
+// previousValue = 0
+
+// # Далее коллбек-функция вызывается для каждого элемента массива. Текущее значение
+// # параметра previousValue это то, что вернула коллбек-функция на прошлой итерации.
+// Итерация 1 -> previousValue = 0 -> number = 2 -> return 0 + 2 -> return 2
+// Итерация 2 -> previousValue = 2 -> number = 7 -> return 2 + 7 -> return 9
+// Итерация 3 -> previousValue = 9 -> number = 3 -> return 9 + 3 -> return 12
+// Итерация 4 -> previousValue = 12 -> number = 14 -> return 12 + 14 -> return 26
+// Итерация 5 -> previousValue = 26 -> number = 6 -> return 26 + 6 -> return 32
+
+// # После того как весь массив перебран, метод reduce() возвращает значение аккумулятора.
+// Результат - 32
+
+const players = {
+  mango: 1270,
+  poly: 468,
+  ajax: 710,
+  kiwi: 244,
 };
+const playtimes = Object.values(players); // [1270, 468, 710, 244]
+// Пиши код ниже этой строки
+
+const totalPlayTime = playtimes.reduce(
+  (previousValue, number) => previousValue + number
+);
+
 // Пиши код выше этой строки
-isAnyUserActive(users);
+const averagePlayTime = totalPlayTime / playtimes.length;
+
+console.log(averagePlayTime);
