@@ -1,20 +1,33 @@
-// const scores = [61, 19, 74, 35, 92, 56];
-// const ascendingScores = [...scores].sort((a, b) => a - b);
-// console.log(ascendingScores); // [19, 35, 56, 61, 74, 92]
+// firstString.localeCompare(secondString);
 
-// const scores = [61, 19, 74, 35, 92, 56];
-// const descendingScores = [...scores].sort((a, b) => b - a);
-// console.log(descendingScores); // [92, 74, 61, 56, 35, 19]
+// 'a'.localeCompare('b'); // -1
+// 'b'.localeCompare('a'); // 1
+// 'a'.localeCompare('a'); // 0
+// 'b'.localeCompare('b'); // 0
 
-const releaseDates = [2016, 1967, 2008, 1984, 1973, 2012, 1997];
+// const students = ['Вика', 'Андрей', 'Олег', 'Юля', 'Борис', 'Катя'];
+
+// const inAlphabetOrder = [...students].sort((a, b) => a.localeCompare(b));
+// console.log(inAlphabetOrder); // ['Андрей', 'Борис', 'Вика', 'Катя', 'Олег', 'Юля']
+
+// const inReversedOrder = [...students].sort((a, b) => b.localeCompare(a));
+// console.log(inReversedOrder); // ['Юля', 'Олег', 'Катя', 'Вика', 'Борис', 'Андрей']
+
+const authors = [
+  "Ли Танит",
+  "Бернард Корнуэлл",
+  "Роберт Шекли",
+  "Федор Достоевский",
+  "Говард Лавкрафт",
+];
 // Пиши код ниже этой строки
 
-const ascendingReleaseDates = [...releaseDates].sort(
-  (firsEl, lastEl) => firsEl - lastEl
+const authorsInAlphabetOrder = [...authors].sort((firstEl, lastEl) =>
+  firstEl.localeCompare(lastEl)
 );
 
-const descendingReleaseDates = [...releaseDates].sort(
-  (firsEl, lastEl) => lastEl - firsEl
+const authorsInReversedOrder = [...authors].sort((firstEl, lastEl) =>
+  lastEl.localeCompare(firstEl)
 );
 
-console.log(ascendingReleaseDates, descendingReleaseDates);
+console.log(authorsInAlphabetOrder, authorsInReversedOrder);
