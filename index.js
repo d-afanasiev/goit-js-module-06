@@ -1,22 +1,16 @@
-function getCommonElements(firstArray, secondArray) {
-  const commonElements = [];
-  // Пиши код ниже этой строки
+// // Обычное объявление функции
+// function classicAdd(a, b, c) {
+//   return a + b + c;
+// }
 
-  // for (let i = 0; i < firstArray.length; i += 1) {
-  //   if (secondArray.includes(firstArray[i])) {
-  //     commonElements.push(firstArray[i]);
-  //   }
-  // }
+// // Тоже самое как стрелочная функция
+// const arrowAdd = (a, b, c) => {
+//   return a + b + c;
+// };
 
-  firstArray.forEach((element) => {
-    if (secondArray.includes(element)) {
-      commonElements.push(element);
-    }
-  });
+// Пиши код ниже этой строки
 
-  console.log(commonElements);
-  return commonElements;
+const calculateTotalPrice = (quantity, pricePerItem) => {
   // Пиши код выше этой строки
-}
-
-getCommonElements([24, 12, 27, 3], [12, 8, 3, 36, 27]);
+  return quantity * pricePerItem;
+};
