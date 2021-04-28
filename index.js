@@ -1,21 +1,37 @@
-// const values = [51, -3, 27, 21, -68, 42, -37];
+// const students = [
+//   { name: "Манго", courses: ["математика", "физика"] },
+//   { name: "Поли", courses: ["информатика", "математика"] },
+//   { name: "Киви", courses: ["физика", "биология"] },
+// ];
 
-// const positiveValues = values.filter((value) => value >= 0);
-// console.log(positiveValues); // [51, 27, 21, 42]
+// const allCourses = students.flatMap((student) => student.courses);
+// // ['математика', 'физика', 'информатика', 'математика', 'физика', 'биология'];
 
-// const negativeValues = values.filter((value) => value < 0);
-// console.log(negativeValues); // [-3, -68, -37]
+// const uniqueCourses = allCourses.filter(
+//   (course, index, array) => array.indexOf(course) === index
+// );
 
-// const bigValues = values.filter((value) => value > 1000);
-// console.log(bigValues); // []
-
-// // Оригинальный массив не изменился
-// console.log(values); // [51, -3, 27, 21, -68, 42, -37]
-
-const numbers = [17, 24, 82, 61, 36, 18, 47, 52, 73];
+const books = [
+  {
+    title: "Последнее королевство",
+    author: "Бернард Корнуэлл",
+    genres: ["приключения", "историческое"],
+  },
+  {
+    title: "На берегу спокойных вод",
+    author: "Роберт Шекли",
+    genres: ["фантастика", "мистика"],
+  },
+  {
+    title: "Красна как кровь",
+    author: "Ли Танит",
+    genres: ["ужасы", "мистика", "приключения"],
+  },
+];
 // Пиши код ниже этой строки
+const allGenres = books.flatMap((book) => book.genres);
+const uniqueGenres = allGenres.filter(
+  (course, index, array) => array.indexOf(course) === index
+);
 
-const evenNumbers = numbers.filter((number) => number % 2 === 0);
-const oddNumbers = numbers.filter((number) => number % 2 !== 0);
-
-console.log(evenNumbers, oddNumbers);
+console.log(allGenres, uniqueGenres);
