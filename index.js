@@ -1,78 +1,35 @@
-const users = [
-  {
-    name: "Moore Hensley",
-    email: "moorehensley@indexia.com",
-    eyeColor: "blue",
-    friends: ["Sharron Pace"],
-    isActive: false,
-    balance: 2811,
-    gender: "male",
-  },
-  {
-    name: "Sharlene Bush",
-    email: "sharlenebush@tubesys.com",
-    eyeColor: "blue",
-    friends: ["Briana Decker", "Sharron Pace"],
-    isActive: true,
-    balance: 3821,
-    gender: "female",
-  },
-  {
-    name: "Ross Vazquez",
-    email: "rossvazquez@xinware.com",
-    eyeColor: "green",
-    friends: ["Marilyn Mcintosh", "Padilla Garrison", "Naomi Buckner"],
-    isActive: false,
-    balance: 3793,
-    gender: "male",
-  },
-  {
-    name: "Elma Head",
-    email: "elmahead@omatom.com",
-    eyeColor: "green",
-    friends: ["Goldie Gentry", "Aisha Tran"],
-    isActive: true,
-    balance: 2278,
-    gender: "female",
-  },
-  {
-    name: "Carey Barr",
-    email: "careybarr@nurali.com",
-    eyeColor: "blue",
-    friends: ["Jordan Sampson", "Eddie Strong"],
-    isActive: true,
-    balance: 3951,
-    gender: "male",
-  },
-  {
-    name: "Blackburn Dotson",
-    email: "blackburndotson@furnigeer.com",
-    eyeColor: "brown",
-    friends: ["Jacklyn Lucas", "Linda Chapman"],
-    isActive: false,
-    balance: 1498,
-    gender: "male",
-  },
-  {
-    name: "Sheree Anthony",
-    email: "shereeanthony@kog.com",
-    eyeColor: "brown",
-    friends: ["Goldie Gentry", "Briana Decker"],
-    isActive: true,
-    balance: 2764,
-    gender: "female",
-  },
+// // Массив чисел будет отсортирован по возврастанию
+// const scores = [61, 19, 74, 35, 92, 56];
+// scores.sort();
+// console.log(scores); // [19, 35, 56, 61, 74, 92]
+
+// // Массив строк сортируется по алфавиту
+// const students = ["Вика", "Андрей", "Олег", "Юля", "Борис", "Катя"];
+// students.sort();
+// console.log(students); // [ 'Андрей', 'Борис', 'Вика', 'Катя', 'Олег', 'Юля' ]
+
+// // При этом порядковый номер заглавных букв меньше чем у прописных
+// const letters = ["b", "B", "a", "A", "c", "C"];
+// letters.sort();
+// console.log(letters); // ['A', 'B', 'C', 'a', 'b', 'c']
+
+// const scores = [61, 19, 74, 35, 92, 56];
+// const ascendingScores = [...scores].sort();
+
+// console.log(scores); // [61, 19, 74, 35, 92, 56]
+// console.log(ascendingScores); // [19, 35, 56, 61, 74, 92]
+
+const releaseDates = [2016, 1967, 2008, 1984, 1973, 2012, 1997];
+const authors = [
+  "Ли Танит",
+  "Бернард Корнуэлл",
+  "Роберт Шекли",
+  "Федор Достоевский",
 ];
-
 // Пиши код ниже этой строки
-const getTotalFriendCount = (users) => {
-  const totalBalance = users.reduce(
-    (total, { friends }) => total + friends.length,
-    0
-  );
-  console.log(totalBalance);
-  return totalBalance;
-};
-// Пиши код выше этой строки
 
-getTotalFriendCount(users);
+const ascendingReleaseDates = [...releaseDates].sort();
+
+const alphabeticalAuthors = [...authors].sort();
+
+console.log(ascendingReleaseDates, alphabeticalAuthors);
