@@ -1,80 +1,41 @@
-const users = [
-  {
-    name: "Moore Hensley",
-    email: "moorehensley@indexia.com",
-    eyeColor: "blue",
-    friends: ["Sharron Pace"],
-    isActive: false,
-    balance: 2811,
-    gender: "male",
-    age: 37,
-  },
-  {
-    name: "Sharlene Bush",
-    email: "sharlenebush@tubesys.com",
-    eyeColor: "blue",
-    friends: ["Briana Decker", "Sharron Pace"],
-    isActive: true,
-    balance: 3821,
-    gender: "female",
-    age: 34,
-  },
-  {
-    name: "Ross Vazquez",
-    email: "rossvazquez@xinware.com",
-    eyeColor: "green",
-    friends: ["Marilyn Mcintosh", "Padilla Garrison", "Naomi Buckner"],
-    isActive: false,
-    balance: 3793,
-    gender: "male",
-    age: 24,
-  },
-  {
-    name: "Elma Head",
-    email: "elmahead@omatom.com",
-    eyeColor: "green",
-    friends: ["Goldie Gentry", "Aisha Tran"],
-    isActive: true,
-    balance: 2278,
-    gender: "female",
-    age: 21,
-  },
-  {
-    name: "Carey Barr",
-    email: "careybarr@nurali.com",
-    eyeColor: "blue",
-    friends: ["Jordan Sampson", "Eddie Strong"],
-    isActive: true,
-    balance: 3951,
-    gender: "male",
-    age: 27,
-  },
-  {
-    name: "Blackburn Dotson",
-    email: "blackburndotson@furnigeer.com",
-    eyeColor: "brown",
-    friends: ["Jacklyn Lucas", "Linda Chapman"],
-    isActive: false,
-    balance: 1498,
-    gender: "male",
-    age: 38,
-  },
-  {
-    name: "Sheree Anthony",
-    email: "shereeanthony@kog.com",
-    eyeColor: "brown",
-    friends: ["Goldie Gentry", "Briana Decker"],
-    isActive: true,
-    balance: 2764,
-    gender: "female",
-    age: 39,
-  },
+// const students = [
+//   { name: "Манго", score: 83, courses: ["математика", "физика"] },
+//   { name: "Поли", score: 59, courses: ["информатика", "математика"] },
+//   { name: "Аякс", score: 37, courses: ["физика", "биология"] },
+//   { name: "Киви", score: 94, courses: ["литература", "информатика"] },
+// ];
+
+// const sortedByAscendingScore = [...students].sort((a, b) => a.score - b.score);
+// const names = sortedByAscendingScore.map((student) => student.name);
+
+// console.log(names); // ['Аякс', 'Поли', 'Манго', 'Киви']
+
+// const names = [...students]
+//   .sort((a, b) => a.score - b.score)
+//   .map((student) => student.name);
+
+// console.log(names); // ['Аякс', 'Поли', 'Манго', 'Киви']
+
+// const uniqueSortedCourses = students
+//   .flatMap((student) => student.courses)
+//   .filter((course, index, array) => array.indexOf(course) === index)
+//   .sort((a, b) => a.localeCompare(b));
+
+// console.log(uniqueSortedCourses); // ['биология', 'информатика', 'литература', 'математика', 'физика']
+
+const books = [
+  { title: "Последнее королевство", author: "Бернард Корнуэлл", rating: 8.38 },
+  { title: "На берегу спокойных вод", author: "Роберт Шекли", rating: 8.51 },
+  { title: "Сон смешного человека", author: "Федор Достоевский", rating: 7.75 },
+  { title: "Красна как кровь", author: "Ли Танит", rating: 8.14 },
+  { title: "Сны В Ведьмином Доме", author: "Говард Лавкрафт", rating: 8.67 },
 ];
+const MIN_BOOK_RATING = 8;
+// Пиши код ниже этой строки
 
-const sortByName = (users) => {
-  return [...users].sort((firsEl, lastEl) =>
-    firsEl.name.localeCompare(lastEl.name)
-  );
-};
+const names = books
+  .filter((book) => book.rating > MIN_BOOK_RATING)
+  .map((book) => book.author)
+  .sort((firstEl, lastEl) => firstEl.localeCompare(lastEl));
 
-console.log(sortByName(users));
+console.log(names);
