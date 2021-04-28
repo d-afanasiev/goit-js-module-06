@@ -73,7 +73,7 @@ const users = [
 
 // Пиши код ниже этой строки
 const getActiveUsers = (users) => {
-  const user = users.filter((user) => user.isActive);
+  const user = users.filter((user) => !user.isActive);
   console.log(user);
   return user;
 };
