@@ -1,29 +1,75 @@
-// const students = [
-//   { name: "Манго", score: 83 },
-//   { name: "Поли", score: 59 },
-//   { name: "Аякс", score: 37 },
-//   { name: "Киви", score: 94 },
-//   { name: "Хьюстон", score: 64 },
-// ];
-
-// // Название аккумулятора может быть произвольным, это просто параметр функции
-// const totalScore = students.reduce((total, student) => {
-//   return total + student.score;
-// }, 0);
-
-// const averageScore = totalScore / students.length;
-
-const players = [
-  { name: "Манго", playtime: 1270, gamesPlayed: 4 },
-  { name: "Поли", playtime: 469, gamesPlayed: 2 },
-  { name: "Аякс", playtime: 690, gamesPlayed: 3 },
-  { name: "Киви", playtime: 241, gamesPlayed: 1 },
+const users = [
+  {
+    name: "Moore Hensley",
+    email: "moorehensley@indexia.com",
+    eyeColor: "blue",
+    friends: ["Sharron Pace"],
+    isActive: false,
+    balance: 2811,
+    gender: "male",
+  },
+  {
+    name: "Sharlene Bush",
+    email: "sharlenebush@tubesys.com",
+    eyeColor: "blue",
+    friends: ["Briana Decker", "Sharron Pace"],
+    isActive: true,
+    balance: 3821,
+    gender: "female",
+  },
+  {
+    name: "Ross Vazquez",
+    email: "rossvazquez@xinware.com",
+    eyeColor: "green",
+    friends: ["Marilyn Mcintosh", "Padilla Garrison", "Naomi Buckner"],
+    isActive: false,
+    balance: 3793,
+    gender: "male",
+  },
+  {
+    name: "Elma Head",
+    email: "elmahead@omatom.com",
+    eyeColor: "green",
+    friends: ["Goldie Gentry", "Aisha Tran"],
+    isActive: true,
+    balance: 2278,
+    gender: "female",
+  },
+  {
+    name: "Carey Barr",
+    email: "careybarr@nurali.com",
+    eyeColor: "blue",
+    friends: ["Jordan Sampson", "Eddie Strong"],
+    isActive: true,
+    balance: 3951,
+    gender: "male",
+  },
+  {
+    name: "Blackburn Dotson",
+    email: "blackburndotson@furnigeer.com",
+    eyeColor: "brown",
+    friends: ["Jacklyn Lucas", "Linda Chapman"],
+    isActive: false,
+    balance: 1498,
+    gender: "male",
+  },
+  {
+    name: "Sheree Anthony",
+    email: "shereeanthony@kog.com",
+    eyeColor: "brown",
+    friends: ["Goldie Gentry", "Briana Decker"],
+    isActive: true,
+    balance: 2764,
+    gender: "female",
+  },
 ];
+
 // Пиши код ниже этой строки
+const calculateTotalBalance = (users) => {
+  const totalBalance = users.reduce((total, { balance }) => total + balance, 0);
+  console.log(totalBalance);
+  return totalBalance;
+};
+// Пиши код выше этой строки
 
-const totalAveragePlaytimePerGame = players.reduce(
-  (total, player) => total + player.playtime / player.gamesPlayed,
-  0
-);
-
-console.log(totalAveragePlaytimePerGame);
+calculateTotalBalance(users);
