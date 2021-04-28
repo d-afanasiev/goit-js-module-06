@@ -72,13 +72,14 @@ const users = [
 ];
 
 // Пиши код ниже этой строки
-const getUsersWithEyeColor = (users, friendName) => {
-  const user = users.filter(
-    ({ friends }) => friends.indexOf(friendName) !== -1
+const getFriends = (users) => {
+  const user = users.flatMap((friend) => friend.friends);
+  const uniqueUser = user.filter(
+    (user, index, array) => array.indexOf(user) === index
   );
-  console.log(user);
-  return user;
+  console.log(uniqueUser);
+  return uniqueUser;
 };
 
-getUsersWithEyeColor(users, "Briana Decker");
+getFriends(users);
 // Пиши код выше этой строки
