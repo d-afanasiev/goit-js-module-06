@@ -72,11 +72,13 @@ const users = [
 ];
 
 // Пиши код ниже этой строки
-const getUsersWithEyeColor = (users, minAge, maxAge) => {
-  const user = users.filter(({ age }) => age > minAge && age < maxAge);
+const getUsersWithEyeColor = (users, friendName) => {
+  const user = users.filter(
+    ({ friends }) => friends.indexOf(friendName) !== -1
+  );
   console.log(user);
   return user;
 };
 
-getUsersWithEyeColor(users, 20, 30);
+getUsersWithEyeColor(users, "Briana Decker");
 // Пиши код выше этой строки
