@@ -79,10 +79,10 @@ const users = [
 ];
 
 // Пиши код ниже этой строки
-const getUserNames = (users) => {
-  const arrUsers = users.map((user) => user.name);
-  return arrUsers;
+const getUserEmails = (users) => {
+  const arrEmails = users.map((emails) => emails.email);
+  return arrEmails;
 };
 // Пиши код выше этой строки
 
-console.log(getUserNames(users));
+console.log(getUserEmails(users));
