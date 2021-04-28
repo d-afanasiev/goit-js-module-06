@@ -1,74 +1,30 @@
-// // Представим что выше есть объявление класса User
+// const numbers = [5, 10, 15, 20, 25];
 
-// class ContentWriter extends User {
-//   posts;
-
-//   constructor({ email, posts }) {
-//     super(email);
-//     this.posts = posts;
-//   }
-
-//   addPost(post) {
-//     this.posts.push(post);
-//   }
+// // Классический for
+// for (let i = 0; i < numbers.length; i += 1) {
+//   console.log(`Индекс ${i}, значение ${numbers[i]}`);
 // }
 
-// const writer = new ContentWriter({ email: "mango@mail.com", posts: [] });
-// console.log(writer); // { email: 'mango@mail.com', posts: [] }
-// console.log(writer.email); // 'mango@mail.com'
-// writer.addPost("post-1");
-// console.log(writer.posts); // ['post-1']
+// // Перебирающий forEach
+// numbers.forEach(function (number, index) {
+//   console.log(`Индекс ${index}, значение ${number}`);
+// });
 
-class User {
-  email;
-
-  constructor(email) {
-    this.email = email;
-  }
-
-  get email() {
-    return this.email;
-  }
-
-  set email(newEmail) {
-    this.email = newEmail;
-  }
-}
-class Admin extends User {
+function calculateTotalPrice(orderedItems) {
+  let totalPrice = 0;
   // Пиши код ниже этой строки
 
-  static AccessLevel = {
-    BASIC: "basic",
-    SUPERUSER: "superuser",
-  };
+  // for (let i = 0; i < orderedItems.length; i += 1) {
+  //   totalPrice += orderedItems[i];
+  // }
 
-  blacklistedEmails = [];
-  accessLevel;
-
-  constructor({ email, accessLevel }) {
-    super(email);
-    this.accessLevel = accessLevel;
-  }
-
-  blacklist(email) {
-    this.blacklistedEmails.push(email);
-  }
-
-  isBlacklisted(email) {
-    return this.blacklistedEmails.includes(email);
-  }
+  orderedItems.forEach((element) => {
+    totalPrice += element;
+  });
 
   // Пиши код выше этой строки
+  console.log(totalPrice);
+  return totalPrice;
 }
 
-const mango = new Admin({
-  email: "mango@mail.com",
-  accessLevel: Admin.AccessLevel.SUPERUSER,
-});
-
-console.log(mango.email); // mango@mail.com
-console.log(mango.accessLevel); // superuser
-mango.blacklist("poly@mail.com");
-console.log(mango.blacklistedEmails); // 'poly@mail.com'
-console.log(mango.isBlacklisted("mango@mail.com")); //  false
-console.log(mango.isBlacklisted("poly@mail.com")); // true
+calculateTotalPrice([12, 85, 37, 4]);
