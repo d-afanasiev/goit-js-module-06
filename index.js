@@ -1,33 +1,43 @@
-// firstString.localeCompare(secondString);
+// const students = [
+//   { name: "Манго", score: 83 },
+//   { name: "Поли", score: 59 },
+//   { name: "Аякс", score: 37 },
+//   { name: "Киви", score: 94 },
+// ];
 
-// 'a'.localeCompare('b'); // -1
-// 'b'.localeCompare('a'); // 1
-// 'a'.localeCompare('a'); // 0
-// 'b'.localeCompare('b'); // 0
+// const inAscendingScoreOrder = students.sort(
+//   (firstStudent, secondStudent) => firstStudent.score - secondStudent.score
+// );
 
-// const students = ['Вика', 'Андрей', 'Олег', 'Юля', 'Борис', 'Катя'];
+// const inDescendingScoreOrder = students.sort(
+//   (firstStudent, secondStudent) => secondStudent.score - firstStudent.score
+// );
 
-// const inAlphabetOrder = [...students].sort((a, b) => a.localeCompare(b));
-// console.log(inAlphabetOrder); // ['Андрей', 'Борис', 'Вика', 'Катя', 'Олег', 'Юля']
+// const inAlphabeticalOrder = students.sort((firstStudent, secondStudent) =>
+//   firstStudent.name.localeCompare(secondStudent.name)
+// );
 
-// const inReversedOrder = [...students].sort((a, b) => b.localeCompare(a));
-// console.log(inReversedOrder); // ['Юля', 'Олег', 'Катя', 'Вика', 'Борис', 'Андрей']
-
-const authors = [
-  "Ли Танит",
-  "Бернард Корнуэлл",
-  "Роберт Шекли",
-  "Федор Достоевский",
-  "Говард Лавкрафт",
+const books = [
+  { title: "Последнее королевство", author: "Бернард Корнуэлл", rating: 8.38 },
+  { title: "На берегу спокойных вод", author: "Роберт Шекли", rating: 8.51 },
+  { title: "Сон смешного человека", author: "Федор Достоевский", rating: 7.75 },
+  { title: "Красна как кровь", author: "Ли Танит", rating: 7.94 },
+  { title: "Враг Божий", author: "Бернард Корнуэлл", rating: 8.67 },
 ];
 // Пиши код ниже этой строки
 
-const authorsInAlphabetOrder = [...authors].sort((firstEl, lastEl) =>
-  firstEl.localeCompare(lastEl)
+const sortedByAuthorName = [...books].sort((firstEl, lastEl) =>
+  firstEl.author.localeCompare(lastEl.author)
 );
 
-const authorsInReversedOrder = [...authors].sort((firstEl, lastEl) =>
-  lastEl.localeCompare(firstEl)
+const sortedByReversedAuthorName = [...books].sort((firstEl, lastEl) =>
+  lastEl.author.localeCompare(firstEl.author)
 );
 
-console.log(authorsInAlphabetOrder, authorsInReversedOrder);
+const sortedByAscendingRating = [...books].sort(
+  (firstEl, lastEl) => firstEl.rating - lastEl.rating
+);
+
+const sortedByDescentingRating = [...books].sort(
+  (firstEl, lastEl) => lastEl.rating - firstEl.rating
+);
