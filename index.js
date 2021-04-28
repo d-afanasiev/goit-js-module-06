@@ -71,8 +71,10 @@ const users = [
   },
 ];
 
-const sortByAscendingBalance = (users) => {
-  return [...users].sort((firsEl, lastEl) => firsEl.balance - lastEl.balance);
+const sortByDescendingFriendCount = (users) => {
+  return [...users].sort(
+    (firsEl, lastEl) => lastEl.friends.length - firsEl.friends.length
+  );
 };
 
-console.log(sortByAscendingBalance(users));
+console.log(sortByDescendingFriendCount(users));
