@@ -1,29 +1,74 @@
-// // Есть хотя бы один элемент больше либо равный нулю? - да
-// [1, 2, 3, 4, 5].some((value) => value >= 0); // true
+const users = [
+  {
+    name: "Moore Hensley",
+    email: "moorehensley@indexia.com",
+    eyeColor: "blue",
+    friends: ["Sharron Pace"],
+    isActive: false,
+    balance: 2811,
+    gender: "male",
+  },
+  {
+    name: "Sharlene Bush",
+    email: "sharlenebush@tubesys.com",
+    eyeColor: "blue",
+    friends: ["Briana Decker", "Sharron Pace"],
+    isActive: true,
+    balance: 3821,
+    gender: "female",
+  },
+  {
+    name: "Ross Vazquez",
+    email: "rossvazquez@xinware.com",
+    eyeColor: "green",
+    friends: ["Marilyn Mcintosh", "Padilla Garrison", "Naomi Buckner"],
+    isActive: false,
+    balance: 3793,
+    gender: "male",
+  },
+  {
+    name: "Elma Head",
+    email: "elmahead@omatom.com",
+    eyeColor: "green",
+    friends: ["Goldie Gentry", "Aisha Tran"],
+    isActive: true,
+    balance: 2278,
+    gender: "female",
+  },
+  {
+    name: "Carey Barr",
+    email: "careybarr@nurali.com",
+    eyeColor: "blue",
+    friends: ["Jordan Sampson", "Eddie Strong"],
+    isActive: true,
+    balance: 3951,
+    gender: "male",
+  },
+  {
+    name: "Blackburn Dotson",
+    email: "blackburndotson@furnigeer.com",
+    eyeColor: "brown",
+    friends: ["Jacklyn Lucas", "Linda Chapman"],
+    isActive: false,
+    balance: 1498,
+    gender: "male",
+  },
+  {
+    name: "Sheree Anthony",
+    email: "shereeanthony@kog.com",
+    eyeColor: "brown",
+    friends: ["Goldie Gentry", "Briana Decker"],
+    isActive: true,
+    balance: 2764,
+    gender: "female",
+  },
+];
 
-// // Есть хотя бы один элемент больше либо равный нулю? - да
-// [-7, -20, 3, -10, -14].some((value) => value >= 0); // true
-
-// // Есть хотя бы один элемент меньше нуля? - нет
-// [1, 2, 3, 4, 5].some((value) => value < 0); // false
-
-// // Есть хотя бы один элемент меньше нуля? - да
-// [1, 2, 3, -10, 4, 5].some((value) => value < 0); // true
-
-const firstArray = [26, 94, 36, 18];
-const secondArray = [17, 61, 23];
-const thirdArray = [17, 26, 94, 61, 36, 23, 18];
 // Пиши код ниже этой строки
-
-const anyElementInFirstIsEven = firstArray.some((element) => element % 2 === 0);
-const anyElementInFirstIsOdd = firstArray.some((element) => element % 2 !== 0);
-
-const anyElementInSecondIsEven = secondArray.some(
-  (element) => element % 2 === 0
-);
-const anyElementInSecondIsOdd = secondArray.some(
-  (element) => element % 2 !== 0
-);
-
-const anyElementInThirdIsEven = thirdArray.some((element) => element % 2 === 0);
-const anyElementInThirdIsOdd = thirdArray.some((element) => element % 2 !== 0);
+const isAnyUserActive = (users) => {
+  const someActiveUsers = users.some(({ isActive }) => isActive);
+  console.log(someActiveUsers);
+  return someActiveUsers;
+};
+// Пиши код выше этой строки
+isAnyUserActive(users);
