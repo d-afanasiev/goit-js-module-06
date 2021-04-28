@@ -1,37 +1,38 @@
+// const LOW_SCORE = 50;
+// const HIGH_SCORE = 80;
 // const students = [
-//   { name: "Манго", courses: ["математика", "физика"] },
-//   { name: "Поли", courses: ["информатика", "математика"] },
-//   { name: "Киви", courses: ["физика", "биология"] },
+//   { name: "Манго", score: 83 },
+//   { name: "Поли", score: 59 },
+//   { name: "Аякс", score: 37 },
+//   { name: "Киви", score: 94 },
+//   { name: "Хьюстон", score: 64 },
 // ];
 
-// const allCourses = students.flatMap((student) => student.courses);
-// // ['математика', 'физика', 'информатика', 'математика', 'физика', 'биология'];
+// const best = students.filter((student) => student.score >= HIGH_SCORE);
+// console.log(best); // Массив объектов с именами Манго и Киви
 
-// const uniqueCourses = allCourses.filter(
-//   (course, index, array) => array.indexOf(course) === index
+// const worst = students.filter((student) => student.score < LOW_SCORE);
+// console.log(worst); // Массив с одним объектом Аякс
+
+// // В коллбек-функции удобно деструктуризировать свойства объекта
+// const average = students.filter(
+//   ({ score }) => score >= LOW_SCORE && score < HIGH_SCORE
 // );
+// console.log(average); // Массив объектов с именами Поли и Хьюстон
 
 const books = [
-  {
-    title: "Последнее королевство",
-    author: "Бернард Корнуэлл",
-    genres: ["приключения", "историческое"],
-  },
-  {
-    title: "На берегу спокойных вод",
-    author: "Роберт Шекли",
-    genres: ["фантастика", "мистика"],
-  },
-  {
-    title: "Красна как кровь",
-    author: "Ли Танит",
-    genres: ["ужасы", "мистика", "приключения"],
-  },
+  { title: "Последнее королевство", author: "Бернард Корнуэлл", rating: 8.38 },
+  { title: "На берегу спокойных вод", author: "Роберт Шекли", rating: 8.51 },
+  { title: "Сон смешного человека", author: "Федор Достоевский", rating: 7.75 },
+  { title: "Красна как кровь", author: "Ли Танит", rating: 7.94 },
+  { title: "Враг Божий", author: "Бернард Корнуэлл", rating: 8.67 },
 ];
-// Пиши код ниже этой строки
-const allGenres = books.flatMap((book) => book.genres);
-const uniqueGenres = allGenres.filter(
-  (course, index, array) => array.indexOf(course) === index
-);
 
-console.log(allGenres, uniqueGenres);
+const MIN_RATING = 8;
+const AUTHOR = "Бернард Корнуэлл";
+// Пиши код ниже этой строки
+
+const topRatedBooks = books.filter(({ rating }) => rating >= MIN_RATING);
+const booksByAuthor = books.filter(({ author }) => author === AUTHOR);
+
+console.log(topRatedBooks, booksByAuthor);
