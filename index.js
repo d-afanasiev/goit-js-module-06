@@ -71,10 +71,10 @@ const users = [
   },
 ];
 
-const sortByDescendingFriendCount = (users) => {
-  return [...users].sort(
-    (firsEl, lastEl) => lastEl.friends.length - firsEl.friends.length
+const sortByName = (users) => {
+  return [...users].sort((firsEl, lastEl) =>
+    firsEl.name.localeCompare(lastEl.name)
   );
 };
 
-console.log(sortByDescendingFriendCount(users));
+console.log(sortByName(users));
